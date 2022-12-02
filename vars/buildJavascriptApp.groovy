@@ -1,12 +1,14 @@
 def call(Map config=[:], Closure body) {
 
+    
+
+    node {
     agent any
 
     tools {
         nodejs 'node'
     }
 
-    node {
         git url: "https://github.com/werne2j/sample-nodejs.git"
         stage("Install") {
             sh "npm install"
