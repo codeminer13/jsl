@@ -1,0 +1,1 @@
+buildJavascriptApp deploy: true
