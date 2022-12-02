@@ -1,6 +1,8 @@
 def call(Map config=[:], Closure body) {
    
     node {
+        env.NODEJS_HOME = "${tool 'node'}"
+        env.PATH = "${env.NODEJS_HOME}/bin:${env.PATH}"
 
         git url: "https://github.com/werne2j/sample-nodejs.git"
         stage("Install") {
