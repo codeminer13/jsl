@@ -1,4 +1,4 @@
-def call(Map config=[:], Closure body) {
+def call() {
     node {
         git url: "https://github.com/werne2j/sample-nodejs"
 
@@ -15,7 +15,5 @@ def call(Map config=[:], Closure body) {
                 sh "npm publish"
             }
         }
-
-        body()
     }
 }
