@@ -1,6 +1,6 @@
 def call() {
     node {
-        git url: "https://github.com/werne2j/sample-nodejs"
+        checkout scm
 
         stage("Install") {
             sh "npm install"
