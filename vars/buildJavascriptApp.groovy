@@ -8,8 +8,8 @@ def call(Map config=[:], Closure body) {
         stage("Install") {
             sh "npm install"
         }
-        stage("Build") {
-            sh "npm run build"
+        stage("Test") {
+            sh "npm test"
         }
         stage("Deploy") {
             if (config.deploy) {
