@@ -9,7 +9,7 @@ def call(Map config=[:], Closure body) {
             sh "npm install"
         }
         stage("Test") {
-            sh "npm test"
+            sh "npm run test"
         }
         stage("Deploy") {
             if (config.deploy) {
