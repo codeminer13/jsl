@@ -9,9 +9,9 @@ def call(Map config=[:], Closure body={}) {
             sh "npm install"
         }
         stage("Test") {
-            sh "npm test"
+            sh "npm react-scripts test"
         }
-       /*  stage("Deploy") {
+        /* stage("Deploy") {
             if (config.deploy) {
                 sh "npm publish"
             }
