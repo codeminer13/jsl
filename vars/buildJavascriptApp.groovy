@@ -16,6 +16,12 @@ def call(Map config=[:], Closure body={}) {
                 sh "npm publish"
             }
         }
+        stage('SonarQube Analysis') {
+            def scannerHome = tool 'sonscan';
+            withSonarQubeEnv(installationName: 'sq1') {
+                sh "${scannerHome}/bin/sonar-scanner"
+            }
+  }
         body()
     }
 }
