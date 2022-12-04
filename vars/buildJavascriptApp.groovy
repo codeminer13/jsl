@@ -8,10 +8,10 @@ def call(Map config=[:], Closure body={}) {
         stage("Install") {
             sh "npm install"
         }
-        stage("Build") {
+        /*stage("Build") {
             sh "npm run build"
         }
-        /* stage("Deploy") {
+        stage("Deploy") {
             if (config.deploy) {
                 sh "npm publish"
             }
