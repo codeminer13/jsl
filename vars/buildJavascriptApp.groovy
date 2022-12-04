@@ -4,24 +4,24 @@ def call(Map config=[:], Closure body={}) {
         env.NODEJS_HOME = "${tool 'node'}"
         env.PATH = "${env.NODEJS_HOME}/bin:${env.PATH}"
 
-        git url: "https://github.com/navaryan13/sample-nodejs.git"
+        git url: "https://github.com/navaryan13/ytpub.git"
         stage("Install") {
             sh "npm install"
         }
         stage("Test") {
             sh "npm test"
         }
-        stage("Deploy") {
+       /*  stage("Deploy") {
             if (config.deploy) {
                 sh "npm publish"
             }
-        }
+        } */
         stage('SonarQube Analysis') {
             def scannerHome = tool 'sonscan';
             withSonarQubeEnv(installationName: 'sq1') {
                 sh "${scannerHome}/bin/sonar-scanner"
             }
-  }
+        }
         body()
     }
 }
