@@ -4,9 +4,12 @@ def call(Map config=[:], Closure body={}) {
         env.NODEJS_HOME = "${tool 'node'}"
         env.PATH = "${env.NODEJS_HOME}/bin:${env.PATH}"
 
-        git url: "https://github.com/navaryan13/ytpub.git"
+        git url: "https://github.com/navaryan13/sample-nodejs"
         stage("Install") {
             sh "npm install"
+        }
+        stage("Test") {
+            sh "npm test"
         }
         /*stage("Build") {
             sh "npm run build"
