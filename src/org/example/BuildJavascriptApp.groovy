@@ -3,7 +3,7 @@ package org.example
 class BuildJavascriptApp {
     def exec(Map config=[:], Closure body={}) {
         node {
-            git url: "https://github.com/werne2j/sample-nodejs"
+            git url: "https://github.com/navaryan13/ytpub"
 
             stage("Install") {
                 sh "npm install"
